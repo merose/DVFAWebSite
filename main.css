@@ -72,7 +72,7 @@ body {
   width: calc(100% - 300px);
 }
 
-.slideshow figure.selected {
+.slideshow figure:first-child {
   position: relative;
   float: left;
 }
@@ -102,7 +102,7 @@ body {
   opacity:0;
 }
 
-.slideshow figure.selected {
+.slideshow figure:first-child {
   opacity: 1;
 }
 
@@ -186,11 +186,6 @@ body {
   border-bottom: 1px solid #C0C0C0;
   border-right: 1px solid #C0C0C0;
   background-color: #C9D4FF;
-}
-
-.slideshow .menu li.selected {
-    background-color: #535a60;
-    color: white;
 }
 
 .slideshow .menu li:nth-child(1) {
