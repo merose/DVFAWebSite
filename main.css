@@ -6,6 +6,11 @@ body {
   line-height: 1.4em;
 }
 
+.clear {
+  height: 1px;
+  clear: both;
+}
+
 #header {
   position: relative;
   margin: 10px 20px 0 20px;
@@ -52,33 +57,33 @@ body {
   content: "\2022\20";
 }
 
-#slideshow {
+.slideshow {
   position: relative;
   margin: 0;
   padding: 0;
-  padding-right: 300px;
-  height: 420px;
-  max-width: 670px;
-/*  background-color: #C9D4FF;*/
-}
-
-.css-slideshow {
-  position: relative;
-}
-
-.css-slideshow figure {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  max-width: 100%;
-}
-
-figure img {
-  padding-right: 300px;
+  max-width: 930px;
   background-color: #C9D4FF;
 }
 
-.css-slideshow figcaption {
+.slideshow figure {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: calc(100% - 300px);
+}
+
+.slideshow figure.selected {
+  position: relative;
+  float: left;
+}
+
+.slideshow figure img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow figcaption {
   position: absolute;
   top: 0;
   color: white;
@@ -88,73 +93,84 @@ figure img {
   transition: opacity .5s;
 }
 
-figcaption .credit {
+.slideshow figcaption .credit {
   font-size: .75em;
   opacity: .7;
 }
 
-.css-slideshow figure {
+.slideshow figure {
   opacity:0;
 }
 
-figure:nth-child(1) {
+.slideshow figure.selected {
+  opacity: 1;
+}
+
+.slideshow figure:nth-child(1) {
   animation: xfade 30s 0s infinite;
   -webkit-animation: xfade 30s 0s infinite;
 }
 
-figure:nth-child(2) {
+.slideshow figure:nth-child(2) {
   animation: xfade 30s 6s infinite;
   -webkit-animation: xfade 30s 6s infinite;
 }
 
-figure:nth-child(3) {
+.slideshow figure:nth-child(3) {
   animation: xfade 30s 12s infinite;
   -webkit-animation: xfade 30s 12s infinite;
 }
 
-figure:nth-child(4) {
+.slideshow figure:nth-child(4) {
   animation: xfade 30s 18s infinite;
   -webkit-animation: xfade 30s 18s infinite;
 }
 
-figure:nth-child(5) {
+.slideshow figure:nth-child(5) {
   animation: xfade 30s 24s infinite;
   -webkit-animation: xfade 30s 24s infinite;
 }
 
 @-webkit-keyframes xfade {
   0% {
+    z-index: 1;
     opacity: 0;
   }
   5% {
+    z-index: 2;
     opacity: 1;
   }
   20% {
+    z-index: 2;
     opacity: 1;
   }
   25% {
+    z-index: 1;
     opacity: 0;
   }
 }
 
 @keyframes xfade {
   0% {
+    z-index: 1;
     opacity: 0;
   }
   5% {
+    z-index: 2;
     opacity: 1;
   }
   20% {
+    z-index: 2;
     opacity: 1;
   }
   25% {
+    z-index: 1;
     opacity: 0;
   }
 }
 
-#slideshow-menu {
-  position: absolute;
-  right: 0;
+.slideshow .menu {
+  float: right;
   width: 300px;
   margin: 0;
   padding: 0;
@@ -163,7 +179,7 @@ figure:nth-child(5) {
   z-index: 2;
 }
 
-#slideshow-menu li {
+.slideshow .menu li {
   margin: 0;
   padding: 10px 0 10px 20px;
   font-size: 90%;
@@ -172,27 +188,32 @@ figure:nth-child(5) {
   background-color: #C9D4FF;
 }
 
-#slideshow-menu li:nth-child(1) {
+.slideshow .menu li.selected {
+    background-color: #535a60;
+    color: white;
+}
+
+.slideshow .menu li:nth-child(1) {
   animation: highlight 30s 0s infinite;
   -webkit-animation: highlight 30s 0s infinite;
 }
 
-#slideshow-menu li:nth-child(2) {
+.slideshow .menu li:nth-child(2) {
   animation: highlight 30s 6s infinite;
   -webkit-animation: highlight 30s 6s infinite;
 }
 
-#slideshow-menu li:nth-child(3) {
+.slideshow .menu li:nth-child(3) {
   animation: highlight 30s 12s infinite;
   -webkit-animation: highlight 30s 12s infinite;
 }
 
-#slideshow-menu li:nth-child(4) {
+.slideshow .menu li:nth-child(4) {
   animation: highlight 30s 18s infinite;
   -webkit-animation: highlight 30s 18s infinite;
 }
 
-#slideshow-menu li:nth-child(5) {
+.slideshow .menu li:nth-child(5) {
   animation: highlight 30s 24s infinite;
   -webkit-animation: highlight 30s 24s infinite;
 }
