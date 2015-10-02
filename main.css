@@ -16,7 +16,24 @@ h1 {
 
 p {
   position: relative;
-  margin: .25em 0;
+  margin: .7em 0;
+  padding: 0 0 .7em 0;
+  max-width: 42em;
+}
+
+dl {
+  margin: .7em 0 .7em 2.5em;
+  padding: 0 0 .7em 0;
+}
+
+dt {
+  float: left;
+  width: 7em;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 7em;
 }
 
 .clear {
@@ -386,6 +403,11 @@ button {
 
 @media screen and (min-width: 585px) {
 
+body {
+  font-size: .9rem;
+  line-height: 1.4em;
+}
+
 #motto {
   display: block;
   position: absolute;
@@ -396,6 +418,8 @@ button {
 }
 
 ul#main-menu {
+  font-size: .8rem;
+  line-height: 1.4em;
   display: block;
   margin: 0;
   padding: 0;
@@ -409,7 +433,7 @@ ul#main-menu {
 
 ul#main-menu li {
   display: inline-block;
-  padding: 0 .6em;
+  padding: 0 .4em;
 }
 
 ul#main-menu li.selected::before {
@@ -434,6 +458,10 @@ ul#main-menu a:hover {
 } /* screen and (min-width: 585px) */
 
 @media screen and (min-width: 700px) {
+
+ul#main-menu li {
+  padding: 0 .6em;
+}
 
 ul#main-menu a {
   font-size: .9rem;
