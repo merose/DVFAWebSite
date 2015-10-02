@@ -206,12 +206,16 @@ button {
   vertical-align: top;
 }
 
-.ticket-menu p {
+.ticket-menu > p {
   clear: both;
   margin-top: 1.4em;
   padding: 0;
   vertical-align: middle;
   max-width: unset;
+}
+
+.ticket-menu .clear {
+  padding-bottom: 1.4em;
 }
 
 .ticket-menu button {
