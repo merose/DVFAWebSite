@@ -203,19 +203,22 @@ button {
 }
 
 .ticket-menu {
-  vertical-align: top;
+  column-width: 450px;
+  -moz-column-width: 450px;
+  -webkit-column-width: 450px;
 }
 
 .ticket-menu > p {
   clear: both;
-  margin-top: 1.4em;
+  margin: .7em 0 1.4em 0;
   padding: 0;
-  vertical-align: middle;
+  vertical-align: top;
   max-width: unset;
+  break-inside: avoid;
 }
 
-.ticket-menu .clear {
-  padding-bottom: 1.4em;
+.ticket-menu > p:first-child {
+  margin-top: 0;
 }
 
 .ticket-menu button {
@@ -223,10 +226,10 @@ button {
 }
 
 .ticket-menu > p > * {
-  display: block;
-  float: left;
+  display: inline-block;
   margin: 0 1em 0 0;
   padding: 0;
+  vertical-align: top;
 }
 
 .ticket-menu > p > *:last-child {
