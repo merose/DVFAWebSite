@@ -144,9 +144,9 @@ ul#main-menu {
 }
 
 .slideshow .link {
-  float: right;
   font-size: .75rem;
   line-height: 1.4em;
+  float: right;
   border-top: 1px solid #E0E0E0;
   width: 50%;
   color: #1d3875;
@@ -181,6 +181,8 @@ ul#main-menu {
 }
 
 button {
+  font-size: .9rem;
+  line-height: 1.4em;
   display: inline-block;
   margin: 0;
   padding: 5px 20px;
@@ -188,6 +190,47 @@ button {
   border: 1px solid white;
   color: white;
   background-color: #4760BD;
+}
+
+#footer {
+  margin-top: 2.8em;
+  padding: 10px 20px;
+  background: #E0E0E0;
+}
+
+#footer > *:last-child {
+  padding-bottom: 0;
+}
+
+.ticket-menu {
+  vertical-align: top;
+}
+
+.ticket-menu p {
+  clear: both;
+  margin-top: 1.4em;
+  padding: 0;
+  vertical-align: middle;
+  max-width: unset;
+}
+
+.ticket-menu button {
+  width: 150px;
+}
+
+.ticket-menu > p > * {
+  display: block;
+  float: left;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+
+.ticket-menu > p > *:last-child {
+  margin-right: 0;
+}
+
+.ticket-menu img {
+  width: 200px;
 }
 
 /*
@@ -230,8 +273,9 @@ button {
 }
 
 .slideshow figcaption {
+  display: block;
   position: absolute;
-  top: 0;
+  bottom: 0;
   color: white;
   background: rgba(0,0,0, .3);
   padding: 8px 20px;
@@ -404,7 +448,11 @@ button {
   }
 }
 
+.ticket-menu > p > .item {
+  padding-top: calc(66px - 1.4em - 17px);
 }
+
+} /* screen and (min-width: 480px) */
 
 @media screen and (min-width: 585px) {
 
@@ -464,12 +512,13 @@ ul#main-menu a:hover {
 
 @media screen and (min-width: 700px) {
 
-ul#main-menu li {
-  padding: 0 .6em;
+ul#main-menu {
+  font-size: .9rem;
+  line-height: 1.4em;
 }
 
-ul#main-menu a {
-  font-size: .9rem;
+ul#main-menu li {
+  padding: 0 .5em;
 }
 
 .slideshow figure {
@@ -477,12 +526,12 @@ ul#main-menu a {
 }
 
 .slideshow .link {
+  font-size: .8rem;
+  line-height: 1.4em;
   width: 249px;
 }
 
 .slideshow .link a {
-  font-size: .8rem;
-  line-height: 1.4em;
   display: block;
   padding: .7em 0 .7em 20px;
 }
@@ -500,6 +549,8 @@ ul#main-menu a {
 }
 
 .slideshow .link {
+  font-size: .9rem;
+  line-height: 1.4em;
   width: 299px;
 }
 
