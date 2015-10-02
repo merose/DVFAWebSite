@@ -21,6 +21,11 @@ p {
   max-width: 42em;
 }
 
+blockquote {
+  margin: .7em 0 .7em 2.5em;
+  padding: 0 0 .7em 0;
+}
+
 dl {
   margin: .7em 0 .7em 2.5em;
   padding: 0 0 .7em 0;
@@ -62,7 +67,7 @@ ul#main-menu {
   display: block;
   float: right;
   margin: 0;
-  padding: 0 0 0 1.5em;
+  padding: 0 0 0 2em;
   list-style: none;
   background: white;
 }
