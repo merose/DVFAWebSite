@@ -21,7 +21,6 @@
   -webkit-column-width: $width;
 }
 
-// Preclude images from overflowing their space.
 $indentWidth: 2.5rem;
 
 $designWidth: 970px;
@@ -33,25 +32,33 @@ $tightLineHeight: 1.2em;
 $buttonColor: #4760BD;
 $linkColor: #1d3875;
 $slideshowBackground: #C9D4FF;
-$grayBackground: #535a60;
+$headerBackground: #535a60;
+$captionBackground: hsla(0, 0, 0, .3);
 
 $lightGray: #E0E0E0;
 $medGray: #C0C0C0;
 
+/*
+ * Default styling is for dumb phones on a small screen. This has the drawback that
+ * IE8 and below use that same styling, but that represents a small market share.
+ */
+
 body {
   font-family: Palatino, "Palatino Regular", "Times New Roman", Times, serif;
   @include text-size(.8rem);
-  // Preclude auto-text zoom on some elements when changing to landscape in iOS.
+  /* Preclude auto-text zoom on some elements when changing to landscape in iOS. */
   -webkit-text-size-adjust:100%;
   position: relative;
   max-width: $designWidth;
   margin: 0 auto;
 }
 
+/* Preclude images from overflowing their boxes. */
 img {
   max-width: 100%;
 }
 
+/* Hyperlinks should be colored, but not underlined, and underline on hover. */
 a {
   @include hover-link;
   color: $linkColor;
@@ -69,21 +76,20 @@ h2 {
   margin: .5em 0 0 0;
 }
 
+/* Paragraphs have 1 line-height of space between them. */
+// TODO: Experiment with top margin of $lineHeight, bottom margin of
+// $halfLine, and no padding, plus h1+* and h2+* have $halfLine of top
+// margin.
 p {
   position: relative;
-  margin: .7em 0;
-  padding: 0 0 .7em 0;
+  margin: $halfLine 0;
+  padding: 0 0 $halfLine 0;
   max-width: 42em;
 }
 
-blockquote {
-  margin: .7em 0 .7em $indentWidth;
-  padding: 0 0 .7em 0;
-}
-
-dl {
-  margin: .7em 0 .7em $indentWidth;
-  padding: 0 0 .7em 0;
+blockquote, dl {
+  margin: $halfLine 0 $halfLine $indentWidth;
+  padding: 0 0 $halfLine 0;
 }
 
 dt {
@@ -96,11 +102,7 @@ dd {
   margin-left: 7em;
 }
 
-.clear {
-  clear: both;
-}
-
-// Detailed text that can be omitted on small screens.
+/* Detailed text that can be omitted on small screens. */
 .detail {
   display: none;
 }
@@ -110,6 +112,7 @@ dd {
   margin: 10px 20px 0 20px;
   height: 85px;
   background: url(header-bar.png) transparent 0 25px repeat-x;
+  // Clear to bottom of all floats so background takes entire space.
   @include pie-clearfix;
 }
 
@@ -147,6 +150,7 @@ dd {
 .slideshow {
   max-width: 100%;
   background-color: $slideshowBackground;
+  // Clear to bottom of all floats so background takes entire space.
   @include pie-clearfix;
 
   ul {
@@ -248,9 +252,10 @@ button {
   @include column-width(450px);
 
   > p {
+    // Clear to bottom of all floats so background takes entire space.
     @include pie-clearfix;
     clear: both;
-    margin: .7em 0 1.4em 0;
+    margin: $halfLine 0 1.4em 0;
     padding: 0;
     vertical-align: top;
     max-width: unset;
@@ -290,55 +295,80 @@ button {
 
 @media screen and (min-width: 480px) {
 
+/*
+ * Screen is wide enough to show the slide show. Position the figures on the left,
+ * and the links on the right, and animate the image flipping and link highlighting.
+ */
+
 .slideshow {
   position: relative;
   margin: 0;
   padding: 0;
   max-width: 100%;
   background-color: $slideshowBackground;
+
+  figure {
+    /* Figures are transparent except for the first. They will appear via
+     * animation. */
+    @include transparent;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: calc(100% - 140px);
+
+    img {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  figcaption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: $captionBackground;
+    padding: 8px 20px;
+    @include opaque;
+    @include transition-property(opacity);
+    @include transition-delay(.5s);
+  }
+
+  /*
+   * Position the first image in its proper spot, in case the browser
+   * doesn't do animations.
+   */
+  li:first-child figure {
+    position: relative;
+    @include opaque;
+    @include float-left;
+  }
+
+  .link {
+    @include text-size(.75rem, 1.2em);
+    clear: right;
+    @include float-right;
+    width: 139px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid $medGray;
+    border-right: 1px solid $medGray;
+  
+    &:first-child {
+      border-top: 1px solid $medGray;
+    }
+  
+    a {
+      display: block;
+      padding: .4em 0 .4em 10px;
+    }
+  }
 }
 
-.slideshow figure {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  width: calc(100% - 140px);
-}
-
-.slideshow figure img {
-  border: none;
-}
-
-.slideshow li:first-child figure {
-  position: relative;
-  @include float-left;
-}
-
-.slideshow figure img {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.slideshow figcaption {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  color: white;
-  background: rgba(0,0,0, .3);
-  padding: 8px 20px;
-  @include opaque;
-  @include transition-property(opacity);
-  @include transition-delay(.5s);
-}
-
-.slideshow figure {
-  @include transparent;
-}
-
-.slideshow li:first-child figure {
-  @include opaque;
-}
+/* Animation switches images and link highlights every 6 seconds. */
 
 @for $i from 1 through 5 {
   .slideshow li:nth-child(#{$i}) figure {
@@ -365,27 +395,6 @@ button {
   }
 }
 
-.slideshow .link {
-  @include text-size(.75rem, 1.2em);
-  clear: right;
-  @include float-right;
-  width: 139px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-bottom: 1px solid $medGray;
-  border-right: 1px solid $medGray;
-}
-
-.slideshow .link:first-child {
-  border-top: 1px solid $medGray;
-}
-
-.slideshow .link a {
-  display: block;
-  padding: .4em 0 .4em 10px;
-}
-
 @for $i from 1 through 5 {
   .slideshow li:nth-child(#{$i}) .link a {
     @include animation(highlight 30s #{6 * ($i - 1)}s infinite);
@@ -394,11 +403,11 @@ button {
 
 @include keyframes(highlight) {
   0% {
-    background-color: $grayBackground;
+    background-color: $headerBackground;
     color: white;
   }
   20% {
-    background-color: $grayBackground;
+    background-color: $headerBackground;
     color: white;
   }
   20.1% {
@@ -411,6 +420,9 @@ button {
   }
 }
 
+/* Add a little more padding to the top of ticket menu items, since they are
+ * shown next to their images instead of below.
+ */
 .ticket-menu > p > .item {
   padding-top: calc(66px - 1.4em - 17px);
 }
@@ -418,6 +430,11 @@ button {
 } /* screen and (min-width: 480px) */
 
 @media screen and (min-width: 585px) {
+
+/*
+ * Screen is wide enough to show larger text, by default, show the motto, and
+ * move the main menu inside the logo bar.
+ */
 
 body {
   @include text-size(.9rem);
@@ -443,52 +460,59 @@ body {
   bottom: 5px;
   color: white;
   background: transparent;
+
+  li {
+    @include inline-block;
+    padding: 0 .4em;
+
+    &.selected::before {
+      content: "\2022\2009";
+    }
+  }
+
+  a, a:visited {
+    color: white;
+  }
 }
 
-#main-menu li {
-  @include inline-block;
-  padding: 0 .4em;
-}
-
-#main-menu li.selected::before {
-  content: "\2022\20";
-}
-
-#main-menu a, #main-menu a:visited {
-  color: white;
-}
-
+/* Links in the slide show can get a little more padding. */
 .slideshow .link a {
-  display: block;
-  padding: .7em 0 .7em 10px;
+  padding: $halfLine 0 $halfLine 10px;
 }
 
 } /* screen and (min-width: 585px) */
 
 @media screen and (min-width: 700px) {
 
+/*
+ * Screen is wide enough to make the menu text larger and widen the slide show
+ * link panel a bit.
+ */
+
 #main-menu {
   @include text-size(.9rem);
+
+  li {
+    padding: 0 .5em;
+  }
 }
 
-#main-menu li {
-  padding: 0 .5em;
+.slideshow {
+  figure {
+    width: calc(100% - 250px);
+  }
+
+  .link {
+    @include text-size(.8rem);
+    width: 249px;
+
+    a {
+      padding: $halfLine 0 $halfLine 20px;
+    }
+  }
 }
 
-.slideshow figure {
-  width: calc(100% - 250px);
-}
-
-.slideshow .link {
-  @include text-size(.8rem);
-  width: 249px;
-}
-
-.slideshow .link a {
-  display: block;
-  padding: .7em 0 .7em 20px;
-}
-
+/* Also show detail text. */
 .detail {
   display: inline;
 }
@@ -497,13 +521,20 @@ body {
 
 @media screen and (min-width: 960px) {
 
-.slideshow figure {
-  width: calc(100% - 300px);
-}
+/*
+ * Screen is wide enough that the slide show images will reach their full size,
+ * so widen the slide show link panel to take up the rest of the space.
+ */
 
-.slideshow .link {
-  @include text-size(.9rem);
-  width: 299px;
+.slideshow {
+  figure {
+    width: calc(100% - 300px);
+  }
+
+  .link {
+    @include text-size(.9rem);
+    width: 299px;
+  }
 }
 
 } /* screen and (min-width: 960px) */

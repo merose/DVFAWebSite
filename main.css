@@ -45,18 +45,25 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+/*
+ * Default styling is for dumb phones on a small screen. This has the drawback that
+ * IE8 and below use that same styling, but that represents a small market share.
+ */
 body {
   font-family: Palatino, "Palatino Regular", "Times New Roman", Times, serif;
   font-size: 0.8rem;
   line-height: 1.4em;
+  /* Preclude auto-text zoom on some elements when changing to landscape in iOS. */
   -webkit-text-size-adjust: 100%;
   position: relative;
   max-width: 970px;
   margin: 0 auto; }
 
+/* Preclude images from overflowing their boxes. */
 img {
   max-width: 100%; }
 
+/* Hyperlinks should be colored, but not underlined, and underline on hover. */
 a {
   text-decoration: none;
   color: #1d3875; }
@@ -75,19 +82,16 @@ h2 {
   line-height: 1.4em;
   margin: .5em 0 0 0; }
 
+/* Paragraphs have 1 line-height of space between them. */
 p {
   position: relative;
-  margin: .7em 0;
-  padding: 0 0 .7em 0;
+  margin: 0.7em 0;
+  padding: 0 0 0.7em 0;
   max-width: 42em; }
 
-blockquote {
+blockquote, dl {
   margin: 0.7em 0 0.7em 2.5rem;
-  padding: 0 0 .7em 0; }
-
-dl {
-  margin: 0.7em 0 0.7em 2.5rem;
-  padding: 0 0 .7em 0; }
+  padding: 0 0 0.7em 0; }
 
 dt {
   float: left;
@@ -97,9 +101,7 @@ dt {
 dd {
   margin-left: 7em; }
 
-.clear {
-  clear: both; }
-
+/* Detailed text that can be omitted on small screens. */
 .detail {
   display: none; }
 
@@ -227,7 +229,7 @@ button {
   .ticket-menu > p {
     *zoom: 1;
     clear: both;
-    margin: .7em 0 1.4em 0;
+    margin: 0.7em 0 1.4em 0;
     padding: 0;
     vertical-align: top;
     max-width: unset;
@@ -261,57 +263,74 @@ button {
  *   585 - Horizontal menu, motto, slide show, detail text
  */
 @media screen and (min-width: 480px) {
+  /*
+   * Screen is wide enough to show the slide show. Position the figures on the left,
+   * and the links on the right, and animate the image flipping and link highlighting.
+   */
   .slideshow {
     position: relative;
     margin: 0;
     padding: 0;
     max-width: 100%;
-    background-color: #C9D4FF; }
+    background-color: #C9D4FF;
+    /*
+     * Position the first image in its proper spot, in case the browser
+     * doesn't do animations.
+     */ }
+    .slideshow figure {
+      /* Figures are transparent except for the first. They will appear via
+       * animation. */
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: calc(100% - 140px); }
+      .slideshow figure img {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none; }
+    .slideshow figcaption {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 20px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+      opacity: 1;
+      -moz-transition-property: opacity;
+      -o-transition-property: opacity;
+      -webkit-transition-property: opacity;
+      transition-property: opacity;
+      -moz-transition-delay: 0.5s;
+      -o-transition-delay: 0.5s;
+      -webkit-transition-delay: 0.5s;
+      transition-delay: 0.5s; }
+    .slideshow li:first-child figure {
+      position: relative;
+      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+      opacity: 1;
+      float: left; }
+    .slideshow .link {
+      font-size: 0.75rem;
+      line-height: 1.2em;
+      clear: right;
+      float: right;
+      width: 139px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-bottom: 1px solid #C0C0C0;
+      border-right: 1px solid #C0C0C0; }
+      .slideshow .link:first-child {
+        border-top: 1px solid #C0C0C0; }
+      .slideshow .link a {
+        display: block;
+        padding: .4em 0 .4em 10px; }
 
-  .slideshow figure {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: calc(100% - 140px); }
-
-  .slideshow figure img {
-    border: none; }
-
-  .slideshow li:first-child figure {
-    position: relative;
-    float: left; }
-
-  .slideshow figure img {
-    display: block;
-    margin: 0;
-    padding: 0; }
-
-  .slideshow figcaption {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    color: white;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 8px 20px;
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1;
-    -moz-transition-property: opacity;
-    -o-transition-property: opacity;
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    -moz-transition-delay: 0.5s;
-    -o-transition-delay: 0.5s;
-    -webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s; }
-
-  .slideshow figure {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0; }
-
-  .slideshow li:first-child figure {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1; }
-
+  /* Animation switches images and link highlights every 6 seconds. */
   .slideshow li:nth-child(1) figure {
     -moz-animation: xfade 30s 0s infinite;
     -webkit-animation: xfade 30s 0s infinite;
@@ -376,25 +395,6 @@ button {
     25% {
       z-index: 1;
       opacity: 0; } }
-  .slideshow .link {
-    font-size: 0.75rem;
-    line-height: 1.2em;
-    clear: right;
-    float: right;
-    width: 139px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-bottom: 1px solid #C0C0C0;
-    border-right: 1px solid #C0C0C0; }
-
-  .slideshow .link:first-child {
-    border-top: 1px solid #C0C0C0; }
-
-  .slideshow .link a {
-    display: block;
-    padding: .4em 0 .4em 10px; }
-
   .slideshow li:nth-child(1) .link a {
     -moz-animation: highlight 30s 0s infinite;
     -webkit-animation: highlight 30s 0s infinite;
@@ -459,10 +459,17 @@ button {
     99.9% {
       background-color: #C9D4FF;
       color: #1d3875; } }
+  /* Add a little more padding to the top of ticket menu items, since they are
+   * shown next to their images instead of below.
+   */
   .ticket-menu > p > .item {
     padding-top: calc(66px - 1.4em - 17px); } }
 /* screen and (min-width: 480px) */
 @media screen and (min-width: 585px) {
+  /*
+   * Screen is wide enough to show larger text, by default, show the motto, and
+   * move the main menu inside the logo bar.
+   */
   body {
     font-size: 0.9rem;
     line-height: 1.4em; }
@@ -487,52 +494,53 @@ button {
     bottom: 5px;
     color: white;
     background: transparent; }
+    #main-menu li {
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      padding: 0 .4em; }
+      #main-menu li.selected::before {
+        content: "\2022\2009"; }
+    #main-menu a, #main-menu a:visited {
+      color: white; }
 
-  #main-menu li {
-    display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto;
-    *zoom: 1;
-    *display: inline;
-    padding: 0 .4em; }
-
-  #main-menu li.selected::before {
-    content: "\2022\20"; }
-
-  #main-menu a, #main-menu a:visited {
-    color: white; }
-
+  /* Links in the slide show can get a little more padding. */
   .slideshow .link a {
-    display: block;
-    padding: .7em 0 .7em 10px; } }
+    padding: 0.7em 0 0.7em 10px; } }
 /* screen and (min-width: 585px) */
 @media screen and (min-width: 700px) {
+  /*
+   * Screen is wide enough to make the menu text larger and widen the slide show
+   * link panel a bit.
+   */
   #main-menu {
     font-size: 0.9rem;
     line-height: 1.4em; }
-
-  #main-menu li {
-    padding: 0 .5em; }
+    #main-menu li {
+      padding: 0 .5em; }
 
   .slideshow figure {
     width: calc(100% - 250px); }
-
   .slideshow .link {
     font-size: 0.8rem;
     line-height: 1.4em;
     width: 249px; }
+    .slideshow .link a {
+      padding: 0.7em 0 0.7em 20px; }
 
-  .slideshow .link a {
-    display: block;
-    padding: .7em 0 .7em 20px; }
-
+  /* Also show detail text. */
   .detail {
     display: inline; } }
 /* screen and (min-width: 700px) */
 @media screen and (min-width: 960px) {
+  /*
+   * Screen is wide enough that the slide show images will reach their full size,
+   * so widen the slide show link panel to take up the rest of the space.
+   */
   .slideshow figure {
     width: calc(100% - 300px); }
-
   .slideshow .link {
     font-size: 0.9rem;
     line-height: 1.4em;
