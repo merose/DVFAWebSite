@@ -41,6 +41,8 @@ $medGray: #C0C0C0;
 body {
   font-family: Palatino, "Palatino Regular", "Times New Roman", Times, serif;
   @include text-size(.8rem);
+  // Preclude auto-text zoom on some elements when changing to landscape in iOS.
+  -webkit-text-size-adjust:100%;
   position: relative;
   max-width: $designWidth;
   margin: 0 auto;
