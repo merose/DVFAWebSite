@@ -63,6 +63,12 @@ h1 {
   margin: .5em 0 0 0;
 }
 
+h2 {
+  font-family: sans-serif;
+  @include text-size(1.2rem, 1.4em);
+  margin: .5em 0 0 0;
+}
+
 p {
   position: relative;
   margin: .7em 0;
