@@ -116,6 +116,15 @@ dd {
   @include pie-clearfix;
 }
 
+#skipLink {
+  @include text-size(1px);
+  position: absolute;
+
+  a, a:visited {
+    color: white;
+  }
+}
+
 #motto {
   @media print {
     display: none;
