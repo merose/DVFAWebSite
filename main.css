@@ -151,7 +151,10 @@ dd {
   padding-left: 20px; }
 
 .slideshow {
+  position: relative;
   max-width: 100%;
+  margin: .7em 0 0 0;
+  padding: 0;
   background-color: #C9D4FF;
   *zoom: 1; }
   .slideshow:after {
@@ -219,7 +222,7 @@ a.button {
   *display: inline;
   font-family: Futura, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-  margin: 0;
+  margin: 2px;
   padding: 5px 20px;
   width: 160px;
   color: white;
@@ -278,11 +281,6 @@ a.button {
    * and the links on the right, and animate the image flipping and link highlighting.
    */
   .slideshow {
-    position: relative;
-    margin: .7em 0 0 0;
-    padding: 0;
-    max-width: 100%;
-    background-color: #C9D4FF;
     /*
      * Position the first image in its proper spot, in case the browser
      * doesn't do animations.

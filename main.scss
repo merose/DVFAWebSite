@@ -164,7 +164,10 @@ dd {
 }
 
 .slideshow {
+  position: relative;
   max-width: 100%;
+  margin: .7em 0 0 0;
+  padding: 0;
   background-color: $slideshowBackground;
   // Clear to bottom of all floats so background takes entire space.
   @include pie-clearfix;
@@ -248,7 +251,7 @@ a.button {
   @include inline-block;
   font-family: $altFontFamily;
   text-align: center;
-  margin: 0;
+  margin: 2px;
   padding: 5px $buttonHorizontalPadding;
   width: 200px - 2*$buttonHorizontalPadding;
   color: white;
@@ -318,12 +321,6 @@ a.button {
  */
 
 .slideshow {
-  position: relative;
-  margin: .7em 0 0 0;
-  padding: 0;
-  max-width: 100%;
-  background-color: $slideshowBackground;
-
   figure {
     /* Figures are transparent except for the first. They will appear via
      * animation. */
