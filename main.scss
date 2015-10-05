@@ -41,7 +41,7 @@ $medGray: #C0C0C0;
 $buttonHorizontalPadding: 20px;
 
 $fontFamily: "Palatino Linotype", Palatino, "Palatino Regular", "Times New Roman", Times, serif;
-$altFontFamily: Arial, Helvetica, sans-serif;
+$altFontFamily: Futura, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 /*
  * Default styling is for dumb phones on a small screen. This has the drawback that
@@ -145,6 +145,7 @@ dd {
   }
 
   @include text-size(.9rem, 1.5em);
+  font-family: $altFontFamily;
   display: block;
   @include float-right;
   margin: 0;
@@ -318,7 +319,7 @@ a.button {
 
 .slideshow {
   position: relative;
-  margin: 0;
+  margin: .7em 0 0 0;
   padding: 0;
   max-width: 100%;
   background-color: $slideshowBackground;
