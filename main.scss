@@ -38,13 +38,18 @@ $captionBackground: hsla(0, 0, 0, .3);
 $lightGray: #E0E0E0;
 $medGray: #C0C0C0;
 
+$buttonHorizontalPadding: 20px;
+
+$fontFamily: "Palatino Linotype", Palatino, "Palatino Regular", "Times New Roman", Times, serif;
+$altFontFamily: Arial, Helvetica, sans-serif;
+
 /*
  * Default styling is for dumb phones on a small screen. This has the drawback that
  * IE8 and below use that same styling, but that represents a small market share.
  */
 
 body {
-  font-family: Palatino, "Palatino Regular", "Times New Roman", Times, serif;
+  font-family: $fontFamily;
   @include text-size(.8rem);
   /* Preclude auto-text zoom on some elements when changing to landscape in iOS. */
   -webkit-text-size-adjust:100%;
@@ -65,13 +70,14 @@ a {
 }
 
 h1 {
-  font-family: sans-serif;
+  font-family: $altFontFamily;
   @include text-size(1.4rem, 1.2em);
   margin: .5em 0 0 0;
+  color: $buttonColor;
 }
 
 h2 {
-  font-family: sans-serif;
+  font-family: $altFontFamily;
   @include text-size(1.2rem, 1.4em);
   margin: .5em 0 0 0;
 }
@@ -236,13 +242,14 @@ dd {
   text-align: center;
 }
 
-button {
+a.button {
   @include text-size(.9rem);
   @include inline-block;
+  font-family: $altFontFamily;
+  text-align: center;
   margin: 0;
-  padding: 5px 20px;
-  width: 200px;
-  border: 1px solid white;
+  padding: 5px $buttonHorizontalPadding;
+  width: 200px - 2*$buttonHorizontalPadding;
   color: white;
   background-color: $buttonColor;
 }
@@ -286,8 +293,8 @@ button {
     }
   }
 
-  button {
-    width: 150px;
+  a.button {
+    width: 150px - 2*$buttonHorizontalPadding;
   }
 
   img {

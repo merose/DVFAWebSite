@@ -50,7 +50,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * IE8 and below use that same styling, but that represents a small market share.
  */
 body {
-  font-family: Palatino, "Palatino Regular", "Times New Roman", Times, serif;
+  font-family: "Palatino Linotype", Palatino, "Palatino Regular", "Times New Roman", Times, serif;
   font-size: 0.8rem;
   line-height: 1.4em;
   /* Preclude auto-text zoom on some elements when changing to landscape in iOS. */
@@ -71,13 +71,14 @@ a {
     text-decoration: underline; }
 
 h1 {
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
   line-height: 1.2em;
-  margin: .5em 0 0 0; }
+  margin: .5em 0 0 0;
+  color: #4760BD; }
 
 h2 {
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   line-height: 1.4em;
   margin: .5em 0 0 0; }
@@ -207,7 +208,7 @@ dd {
   margin: 20px 0;
   text-align: center; }
 
-button {
+a.button {
   font-size: 0.9rem;
   line-height: 1.4em;
   display: inline-block;
@@ -215,10 +216,11 @@ button {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
   margin: 0;
   padding: 5px 20px;
-  width: 200px;
-  border: 1px solid white;
+  width: 160px;
   color: white;
   background-color: #4760BD; }
 
@@ -258,8 +260,8 @@ button {
       vertical-align: top; }
       .ticket-menu > p > *:last-child {
         margin-right: 0; }
-  .ticket-menu button {
-    width: 150px; }
+  .ticket-menu a.button {
+    width: 110px; }
   .ticket-menu img {
     width: 200px; }
 
