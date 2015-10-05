@@ -87,7 +87,7 @@ p {
   max-width: 42em;
 }
 
-blockquote, dl {
+blockquote, dl, .indent {
   margin: $halfLine 0 $halfLine $indentWidth;
   padding: 0 0 $halfLine 0;
 }
