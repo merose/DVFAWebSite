@@ -159,7 +159,7 @@ dd {
   max-width: 100%;
   margin: .7em 0 0 0;
   padding: 0;
-  background-color: #D9E1FF;
+  background-color: #E0E7FF;
   *zoom: 1;
   list-style: none; }
   .slideshow:after {
@@ -317,13 +317,13 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   99.9% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   100% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; } }
 @-webkit-keyframes highlight {
   0% {
@@ -333,13 +333,13 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   99.9% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   100% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; } }
 @keyframes highlight {
   0% {
@@ -349,13 +349,13 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   99.9% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; }
   100% {
-    background-color: #D9E1FF;
+    background-color: #E0E7FF;
     color: #143CD8; } }
 #body {
   margin: 30px 20px; }
@@ -514,24 +514,24 @@ a.button {
       opacity: 1; } }
   @-moz-keyframes no-highlight {
     0% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; }
     100% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; } }
   @-webkit-keyframes no-highlight {
     0% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; }
     100% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; } }
   @keyframes no-highlight {
     0% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; }
     100% {
-      background-color: #D9E1FF;
+      background-color: #E0E7FF;
       color: #143CD8; } } }
 /* screen and (max-width: 479px) */
 @media screen and (min-width: 480px) {
