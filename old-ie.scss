@@ -52,7 +52,11 @@ h2 {
 
   .figure {
     @include opaque;
-    width: 70%;
+    width: 67%;
+
+    img {
+      display: none;
+    }
 
     .caption {
       display: none;
@@ -60,11 +64,23 @@ h2 {
   }
 
   li:first-child .figure {
-    float: none;
+    float: left;
+
+    img {
+      display: block;
+    }
   }
 
   .link {
-    width: 30%;
+    font-size: 80%;
+    line-height: 1.4em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    width: 33%;
   }
 
+}
+
+.detail {
+  display: inline;
 }

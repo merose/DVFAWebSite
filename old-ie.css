@@ -35,12 +35,23 @@ h2 {
 .slideshow .figure {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  width: 70%; }
+  width: 67%; }
+  .slideshow .figure img {
+    display: none; }
   .slideshow .figure .caption {
     display: none; }
 .slideshow li:first-child .figure {
-  float: none; }
+  float: left; }
+  .slideshow li:first-child .figure img {
+    display: block; }
 .slideshow .link {
-  width: 30%; }
+  font-size: 80%;
+  line-height: 1.4em;
+  padding-top: .4em;
+  padding-bottom: .4em;
+  width: 33%; }
+
+.detail {
+  display: inline; }
 
 /*# sourceMappingURL=old-ie.css.map */
