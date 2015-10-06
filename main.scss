@@ -261,19 +261,18 @@ dd {
 
 @include keyframes(xfade) {
   0% {
-    z-index: 1;
     @include transparent;
   }
   5% {
-    z-index: 2;
     @include opaque;
   }
   20% {
-    z-index: 2;
     @include opaque;
   }
   25% {
-    z-index: 1;
+    @include transparent;
+  }
+  100% {
     @include transparent;
   }
 }
@@ -298,6 +297,10 @@ dd {
     color: $linkColor;
   }
   99.9% {
+    background-color: $slideshowBackground;
+    color: $linkColor;
+  }
+  100% {
     background-color: $slideshowBackground;
     color: $linkColor;
   }
@@ -413,11 +416,19 @@ a.button {
   0% {
     @include opaque;
   }
+  100% {
+    @include opaque;
+  }
 }
 
 @keyframes highlight {
   0% {
-    @include opaque;
+    background-color: $slideshowBackground;
+    color: $linkColor;
+  }
+  100% {
+    background-color: $slideshowBackground;
+    color: $linkColor;
   }
 }
 
