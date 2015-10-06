@@ -63,6 +63,11 @@ img {
   max-width: 100%;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+}
+
 /* Hyperlinks should be colored, but not underlined, and underline on hover. */
 a {
   @include hover-link;
@@ -171,30 +176,22 @@ dd {
   background-color: $slideshowBackground;
   // Clear to bottom of all floats so background takes entire space.
   @include pie-clearfix;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  list-style: none;
 
   li {
-    display: block;
     margin: 0;
     padding: 0;
   }
 
   figure {
-    clear: both;
-    @include float-left;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 140px);
+    @include transparent;
 
     img {
       display: block;
-      border-top: 1px solid gray;
     }
 
     .credit {
@@ -207,21 +204,38 @@ dd {
     }
   }
 
+  li:first-child figure {
+    position: relative;
+    @include float-left;
+    @include opaque;
+  }
+
   figcaption {
-    display: none;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: white;
+    background: $captionBackground;
+    padding: 8px 20px;
   }
 
   .link {
-    @include text-size(.75rem);
+    @include text-size(.75rem, 1.2em);
     @include float-right;
-    border-top: 1px solid $lightGray;
-    width: 50%;
+    width: 140px;
     color: $linkColor;
 
+    border-top: 1px solid $lightGray;
+  
+    &:first-child {
+      border-top: 1px solid $medGray;
+    }
+  
     a {
       display: block;
       margin: 0;
-      padding: 1em 0 0 10px;
+      padding: .4em 0 .4em 10px;
     }
   }
 
@@ -235,6 +249,58 @@ dd {
     }
   }
 
+}
+
+/* Animation switches images and link highlights every 6 seconds. */
+
+@for $i from 1 through 5 {
+  .slideshow li:nth-child(#{$i}) figure {
+    @include animation(xfade 30s #{6 * ($i - 1)}s infinite);
+  }
+}
+
+@include keyframes(xfade) {
+  0% {
+    z-index: 1;
+    @include transparent;
+  }
+  5% {
+    z-index: 2;
+    @include opaque;
+  }
+  20% {
+    z-index: 2;
+    @include opaque;
+  }
+  25% {
+    z-index: 1;
+    @include transparent;
+  }
+}
+
+@for $i from 1 through 5 {
+  .slideshow li:nth-child(#{$i}) .link a {
+    @include animation(highlight 30s #{6 * ($i - 1)}s infinite);
+  }
+}
+
+@include keyframes(highlight) {
+  0% {
+    background-color: $headerBackground;
+    color: white;
+  }
+  20% {
+    background-color: $headerBackground;
+    color: white;
+  }
+  20.1% {
+    background-color: $slideshowBackground;
+    color: $linkColor;
+  }
+  99.9% {
+    background-color: $slideshowBackground;
+    color: $linkColor;
+  }
 }
 
 #body {
@@ -313,126 +379,56 @@ a.button {
  *   585 - Horizontal menu, motto, slide show, detail text
  */
 
+@media screen and (max-width: 479px) {
+
+/*
+ * Screen is too narrow for the slide show.
+ */
+
+.slideshow {
+  figure {
+    /* No need to float the figures, since we aren't animating. */
+    position: relative;
+    width: 50%;
+    @include opaque;
+  }
+
+  li:first-child figure {
+    float: none;
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  .link {
+    /* We can use larger text, since we're using 50% of the width. */
+    @inclue text-size(.9em, 1.4em);
+    @include float-right;
+    width: 50%;
+  }
+}
+
+@keyframes xfade {
+  0% {
+    @include opaque;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    @include opaque;
+  }
+}
+
+} /* screen and (max-width: 479px) */
+
 @media screen and (min-width: 480px) {
 
 /*
  * Screen is wide enough to show the slide show. Position the figures on the left,
  * and the links on the right, and animate the image flipping and link highlighting.
  */
-
-.slideshow {
-  figure {
-    /* Figures are transparent except for the first. They will appear via
-     * animation. */
-    @include transparent;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: calc(100% - 140px);
-
-    img {
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-  }
-
-  figcaption {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    color: white;
-    background: $captionBackground;
-    padding: 8px 20px;
-    @include opaque;
-    @include transition-property(opacity);
-    @include transition-delay(.5s);
-  }
-
-  /*
-   * Position the first image in its proper spot, in case the browser
-   * doesn't do animations.
-   */
-  li:first-child figure {
-    position: relative;
-    @include opaque;
-    @include float-left;
-  }
-
-  .link {
-    @include text-size(.75rem, 1.2em);
-    clear: right;
-    @include float-right;
-    width: 139px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-bottom: 1px solid $medGray;
-    border-right: 1px solid $medGray;
-  
-    &:first-child {
-      border-top: 1px solid $medGray;
-    }
-  
-    a {
-      display: block;
-      padding: .4em 0 .4em 10px;
-    }
-  }
-}
-
-/* Animation switches images and link highlights every 6 seconds. */
-
-@for $i from 1 through 5 {
-  .slideshow li:nth-child(#{$i}) figure {
-    @include animation(xfade 30s #{6 * ($i - 1)}s infinite);
-  }
-}
-
-@include keyframes(xfade) {
-  0% {
-    z-index: 1;
-    @include transparent;
-  }
-  5% {
-    z-index: 2;
-    @include opaque;
-  }
-  20% {
-    z-index: 2;
-    @include opaque;
-  }
-  25% {
-    z-index: 1;
-    @include transparent;
-  }
-}
-
-@for $i from 1 through 5 {
-  .slideshow li:nth-child(#{$i}) .link a {
-    @include animation(highlight 30s #{6 * ($i - 1)}s infinite);
-  }
-}
-
-@include keyframes(highlight) {
-  0% {
-    background-color: $headerBackground;
-    color: white;
-  }
-  20% {
-    background-color: $headerBackground;
-    color: white;
-  }
-  20.1% {
-    background-color: $slideshowBackground;
-    color: $linkColor;
-  }
-  99.9% {
-    background-color: $slideshowBackground;
-    color: $linkColor;
-  }
-}
 
 /* Add a little more padding to the top of ticket menu items, since they are
  * shown next to their images instead of below.
