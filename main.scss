@@ -259,7 +259,11 @@ dd {
   }
 }
 
-@include keyframes(xfade) {
+/*
+ * Use the official syntax here so IE will pick it  up. We'll prefix with
+ *"-webkit-" only in @media queries.
+ */
+@include keyframes (xfade) {
   0% {
     @include transparent;
   }
@@ -283,6 +287,10 @@ dd {
   }
 }
 
+/*
+ * Use the official syntax here so IE will pick it  up. We'll prefix with
+ *"-webkit-" only in @media queries.
+ */
 @include keyframes(highlight) {
   0% {
     background-color: $headerBackground;
@@ -412,7 +420,7 @@ a.button {
   }
 }
 
-@keyframes xfade {
+@include keyframes(xfade) {
   0% {
     @include opaque;
   }
@@ -421,7 +429,7 @@ a.button {
   }
 }
 
-@keyframes highlight {
+@include keyframes (highlight) {
   0% {
     background-color: $slideshowBackground;
     color: $linkColor;

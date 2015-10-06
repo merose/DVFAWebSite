@@ -243,6 +243,10 @@ dd {
   -webkit-animation: xfade 30s 24s infinite;
   animation: xfade 30s 24s infinite; }
 
+/*
+ * Use the official syntax here so IE will pick it  up. We'll prefix with
+ *"-webkit-" only in @media queries.
+ */
 @-moz-keyframes xfade {
   0% {
     opacity: 0; }
@@ -301,6 +305,10 @@ dd {
   -webkit-animation: highlight 30s 24s infinite;
   animation: highlight 30s 24s infinite; }
 
+/*
+ * Use the official syntax here so IE will pick it  up. We'll prefix with
+ *"-webkit-" only in @media queries.
+ */
 @-moz-keyframes highlight {
   0% {
     background-color: #535a60;
@@ -439,13 +447,35 @@ a.button {
     float: right;
     width: 50%; }
 
-  @keyframes xfade {
+  @-moz-keyframes xfade {
     0% {
-      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
       opacity: 1; }
     100% {
-      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
       opacity: 1; } }
+  @-webkit-keyframes xfade {
+    0% {
+      opacity: 1; }
+    100% {
+      opacity: 1; } }
+  @keyframes xfade {
+    0% {
+      opacity: 1; }
+    100% {
+      opacity: 1; } }
+  @-moz-keyframes highlight {
+    0% {
+      background-color: #C9D4FF;
+      color: #1d3875; }
+    100% {
+      background-color: #C9D4FF;
+      color: #1d3875; } }
+  @-webkit-keyframes highlight {
+    0% {
+      background-color: #C9D4FF;
+      color: #1d3875; }
+    100% {
+      background-color: #C9D4FF;
+      color: #1d3875; } }
   @keyframes highlight {
     0% {
       background-color: #C9D4FF;
