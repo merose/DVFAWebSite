@@ -21,7 +21,6 @@
   .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
-    width: 50%;
     @include opaque;
     border-bottom: .7em solid white;
 
@@ -38,5 +37,6 @@
     /* We can use larger text, since we're using 50% of the width. */
     @include text-size(.9em, 1.4em);
     float: none;
+    width: 100%;
   }
 }
