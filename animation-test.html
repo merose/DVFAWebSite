@@ -5,6 +5,15 @@
   <title>Animation Test</title>
 
   <style type="text/css">
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
 .slideshow {
   margin: 0;
   padding: 0;
@@ -53,6 +62,112 @@
     opacity: 0;
   }
 }
+
+.images {
+  position: relative;
+  margin: 2em 0 0 0;
+  padding: 0;
+  background: #E0E0E0;
+  list-style: none;
+  max-width: 970px;
+}
+
+.images:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.images li {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+.images li figure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.images li:first-child figure {
+  position: relative;
+  float: left;
+  opacity: 1;
+}
+
+.images .link {
+  clear: right;
+  float: right;
+  width: 299px;
+}
+
+.images figure {
+  width: calc(100% - 300px);
+}
+
+.images img {
+  display: block;
+}
+
+.images li:nth-child(1) figure {
+  animation: xfade 12s 0s infinite;
+}
+
+.images li:nth-child(2) figure {
+  animation: xfade 12s 4s infinite;
+}
+
+.images li:nth-child(3) figure {
+  animation: xfade 12s 8s infinite;
+}
+
+@keyframes xfade {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.images li:nth-child(1) .link {
+  animation: color 12s 0s infinite;
+}
+
+.images li:nth-child(2) .link {
+  animation: color 12s 4s infinite;
+}
+
+.images li:nth-child(3) .link {
+  animation: color 12s 8s infinite;
+}
+
+@keyframes color {
+  0% {
+    color: black;
+  }
+  5% {
+    color: red;
+  }
+  33% {
+    color: red;
+  }
+  38% {
+    color: black;
+  }
+}
   </style>
 </head>
 
@@ -63,6 +178,27 @@
   <li>One</li>
   <li>Two</li>
   <li>Three</li>
+</ul>
+
+<ul class="images" title="Images">
+  <li>
+    <div class="link">Farallon</div>
+    <figure>
+      <img src="images/farallon-quintet.jpg" />
+    </figure>
+  </li>
+  <li>
+    <div class="link">Telegraph</div>
+    <figure>
+      <img src="images/telegraph-quartet.jpg" />
+    </figure>
+  </li>
+  <li>
+    <div class="link">Eos</div>
+    <figure>
+      <img src="images/eos-ensemble.jpg" />
+    </figure>
+  </li>
 </ul>
 
 </body>
