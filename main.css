@@ -50,7 +50,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * IE8 and below use that same styling, but that represents a small market share.
  */
 body {
-  font-family: "Palatino Linotype", Palatino, "Palatino Regular", "Times New Roman", Times, serif;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", "Palatino Regular", "Times New Roman", Times, serif;
   font-size: 0.8rem;
   line-height: 1.4em;
   /* Preclude auto-text zoom on some elements when changing to landscape in iOS. */
