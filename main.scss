@@ -202,22 +202,22 @@ dd {
       color: white;
       @include opacity(.7);
     }
+
+    .caption {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: white;
+      background: $captionBackground;
+      padding: 8px 20px;
+    }
   }
 
   li:first-child figure {
     position: relative;
     @include float-left;
     @include opaque;
-  }
-
-  figcaption {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    color: white;
-    background: $captionBackground;
-    padding: 8px 20px;
   }
 
   .link {
@@ -402,14 +402,14 @@ a.button {
     position: relative;
     width: 50%;
     @include opaque;
+
+    .caption {
+      display: none;
+    }
   }
 
   li:first-child figure {
     float: none;
-  }
-
-  figcaption {
-    display: none;
   }
 
   .link {

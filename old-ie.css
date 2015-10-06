@@ -3,21 +3,22 @@
  * and don't let the images get too large.
  */
 .slideshow {
-  max-width: 600px; }
+  max-width: 300px; }
   .slideshow figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1; }
+    opacity: 1;
+    border-bottom: .7em solid white; }
+    .slideshow figure .caption {
+      display: none; }
   .slideshow li:first-child figure {
     float: none; }
-  .slideshow figcaption {
-    display: none; }
   .slideshow .link {
     /* We can use larger text, since we're using 50% of the width. */
-    @inclue text-size(.9em, 1.4em);
-    float: right;
-    width: 50%; }
+    font-size: 0.9em;
+    line-height: 1.4em;
+    float: none; }
 
 /*# sourceMappingURL=old-ie.css.map */

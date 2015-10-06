@@ -16,27 +16,27 @@
  */
 
 .slideshow {
-  max-width: 600px;
+  max-width: 300px;
 
   figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
     @include opaque;
+    border-bottom: .7em solid white;
+
+    .caption {
+      display: none;
+    }
   }
 
   li:first-child figure {
     float: none;
   }
 
-  figcaption {
-    display: none;
-  }
-
   .link {
     /* We can use larger text, since we're using 50% of the width. */
-    @inclue text-size(.9em, 1.4em);
-    @include float-right;
-    width: 50%;
+    @include text-size(.9em, 1.4em);
+    float: none;
   }
 }
