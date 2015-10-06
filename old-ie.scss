@@ -10,19 +10,49 @@
   line-height: $line-height;
 }
 
-/*
- * Animations are not supported, so show the images and links side-by-side,
- * and don't let the images get too large.
- */
+body {
+  @include text-size(80%);
+}
+
+h1 {
+  font-size: 140%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+#main-menu {
+  @include text-size(.8rem);
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 184px;
+  bottom: 5px;
+  color: white;
+  background: transparent;
+
+  li {
+    @include inline-block;
+    padding: 0 .4em;
+
+    &.selected::before {
+      content: "\2022\2009";
+    }
+  }
+
+  a, a:visited {
+    color: white;
+  }
+}
 
 .slideshow {
-  max-width: 300px;
 
   .figure {
-    /* No need to float the figures, since we aren't animating. */
-    position: relative;
     @include opaque;
-    border-bottom: .7em solid white;
+    width: 70%;
 
     .caption {
       display: none;
@@ -34,9 +64,7 @@
   }
 
   .link {
-    /* We can use larger text, since we're using 50% of the width. */
-    @include text-size(.9em, 1.4em);
-    float: none;
-    width: 100%;
+    width: 30%;
   }
+
 }

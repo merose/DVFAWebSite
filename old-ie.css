@@ -1,24 +1,46 @@
-/*
- * Animations are not supported, so show the images and links side-by-side,
- * and don't let the images get too large.
- */
-.slideshow {
-  max-width: 300px; }
-  .slideshow .figure {
-    /* No need to float the figures, since we aren't animating. */
-    position: relative;
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1;
-    border-bottom: .7em solid white; }
-    .slideshow .figure .caption {
-      display: none; }
-  .slideshow li:first-child .figure {
-    float: none; }
-  .slideshow .link {
-    /* We can use larger text, since we're using 50% of the width. */
-    font-size: 0.9em;
-    line-height: 1.4em;
-    float: none;
-    width: 100%; }
+body {
+  font-size: 80%;
+  line-height: 1.4em; }
+
+h1 {
+  font-size: 140%; }
+
+h2 {
+  font-size: 120%; }
+
+#main-menu {
+  font-size: 0.8rem;
+  line-height: 1.4em;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 184px;
+  bottom: 5px;
+  color: white;
+  background: transparent; }
+  #main-menu li {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    padding: 0 .4em; }
+    #main-menu li.selected::before {
+      content: "\2022\2009"; }
+  #main-menu a, #main-menu a:visited {
+    color: white; }
+
+.slideshow .figure {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  width: 70%; }
+  .slideshow .figure .caption {
+    display: none; }
+.slideshow li:first-child .figure {
+  float: none; }
+.slideshow .link {
+  width: 30%; }
 
 /*# sourceMappingURL=old-ie.css.map */
