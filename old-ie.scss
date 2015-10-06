@@ -1,0 +1,42 @@
+@import "compass/utilities";
+@import "compass/utilities";
+@import "compass/css3/opacity";
+@import "compass/utilities/general/float";
+
+// Set the font size and line height, in one step, since the line height must
+// be set after the font size.
+@mixin text-size($font-size, $line-height: 1.4em) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+/*
+ * Animations are not supported, so show the images and links side-by-side,
+ * and don't let the images get too large.
+ */
+
+.slideshow {
+  max-width: 600px;
+
+  figure {
+    /* No need to float the figures, since we aren't animating. */
+    position: relative;
+    width: 50%;
+    @include opaque;
+  }
+
+  li:first-child figure {
+    float: none;
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  .link {
+    /* We can use larger text, since we're using 50% of the width. */
+    @inclue text-size(.9em, 1.4em);
+    @include float-right;
+    width: 50%;
+  }
+}
