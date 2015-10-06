@@ -420,7 +420,19 @@ a.button {
   }
 }
 
-@include keyframes(xfade) {
+@for $i from 1 through 5 {
+  .slideshow li:nth-child(#{$i}) figure {
+    @include animation(no-fade 30s #{6 * ($i - 1)}s infinite);
+  }
+}
+
+@for $i from 1 through 5 {
+  .slideshow li:nth-child(#{$i}) .link a {
+    @include animation(no-highlight 30s #{6 * ($i - 1)}s infinite);
+  }
+}
+
+@include keyframes(no-fade) {
   0% {
     @include opaque;
   }
@@ -429,7 +441,7 @@ a.button {
   }
 }
 
-@include keyframes (highlight) {
+@include keyframes (no-highlight) {
   0% {
     background-color: $slideshowBackground;
     color: $linkColor;

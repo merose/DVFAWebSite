@@ -447,36 +447,86 @@ a.button {
     float: right;
     width: 50%; }
 
-  @-moz-keyframes xfade {
+  .slideshow li:nth-child(1) figure {
+    -moz-animation: no-fade 30s 0s infinite;
+    -webkit-animation: no-fade 30s 0s infinite;
+    animation: no-fade 30s 0s infinite; }
+
+  .slideshow li:nth-child(2) figure {
+    -moz-animation: no-fade 30s 6s infinite;
+    -webkit-animation: no-fade 30s 6s infinite;
+    animation: no-fade 30s 6s infinite; }
+
+  .slideshow li:nth-child(3) figure {
+    -moz-animation: no-fade 30s 12s infinite;
+    -webkit-animation: no-fade 30s 12s infinite;
+    animation: no-fade 30s 12s infinite; }
+
+  .slideshow li:nth-child(4) figure {
+    -moz-animation: no-fade 30s 18s infinite;
+    -webkit-animation: no-fade 30s 18s infinite;
+    animation: no-fade 30s 18s infinite; }
+
+  .slideshow li:nth-child(5) figure {
+    -moz-animation: no-fade 30s 24s infinite;
+    -webkit-animation: no-fade 30s 24s infinite;
+    animation: no-fade 30s 24s infinite; }
+
+  .slideshow li:nth-child(1) .link a {
+    -moz-animation: no-highlight 30s 0s infinite;
+    -webkit-animation: no-highlight 30s 0s infinite;
+    animation: no-highlight 30s 0s infinite; }
+
+  .slideshow li:nth-child(2) .link a {
+    -moz-animation: no-highlight 30s 6s infinite;
+    -webkit-animation: no-highlight 30s 6s infinite;
+    animation: no-highlight 30s 6s infinite; }
+
+  .slideshow li:nth-child(3) .link a {
+    -moz-animation: no-highlight 30s 12s infinite;
+    -webkit-animation: no-highlight 30s 12s infinite;
+    animation: no-highlight 30s 12s infinite; }
+
+  .slideshow li:nth-child(4) .link a {
+    -moz-animation: no-highlight 30s 18s infinite;
+    -webkit-animation: no-highlight 30s 18s infinite;
+    animation: no-highlight 30s 18s infinite; }
+
+  .slideshow li:nth-child(5) .link a {
+    -moz-animation: no-highlight 30s 24s infinite;
+    -webkit-animation: no-highlight 30s 24s infinite;
+    animation: no-highlight 30s 24s infinite; }
+
+  @-moz-keyframes no-fade {
     0% {
       opacity: 1; }
     100% {
       opacity: 1; } }
-  @-webkit-keyframes xfade {
+  @-webkit-keyframes no-fade {
     0% {
       opacity: 1; }
     100% {
       opacity: 1; } }
-  @keyframes xfade {
+  @keyframes no-fade {
     0% {
       opacity: 1; }
     100% {
       opacity: 1; } }
-  @-moz-keyframes highlight {
+  @-moz-keyframes no-highlight {
     0% {
       background-color: #C9D4FF;
       color: #1d3875; }
     100% {
       background-color: #C9D4FF;
       color: #1d3875; } }
-  @-webkit-keyframes highlight {
+  @-webkit-keyframes no-highlight {
     0% {
       background-color: #C9D4FF;
       color: #1d3875; }
     100% {
       background-color: #C9D4FF;
       color: #1d3875; } }
-  @keyframes highlight {
+  @keyframes no-highlight {
     0% {
       background-color: #C9D4FF;
       color: #1d3875; }
