@@ -4,16 +4,16 @@
  */
 .slideshow {
   max-width: 300px; }
-  .slideshow figure {
+  .slideshow .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
     border-bottom: .7em solid white; }
-    .slideshow figure .caption {
+    .slideshow .figure .caption {
       display: none; }
-  .slideshow li:first-child figure {
+  .slideshow li:first-child .figure {
     float: none; }
   .slideshow .link {
     /* We can use larger text, since we're using 50% of the width. */

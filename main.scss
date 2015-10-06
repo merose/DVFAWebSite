@@ -63,7 +63,7 @@ img {
   max-width: 100%;
 }
 
-figure {
+.figure {
   margin: 0;
   padding: 0;
 }
@@ -183,7 +183,7 @@ dd {
     padding: 0;
   }
 
-  figure {
+  .figure {
     position: absolute;
     top: 0;
     left: 0;
@@ -214,7 +214,7 @@ dd {
     }
   }
 
-  li:first-child figure {
+  li:first-child .figure {
     position: relative;
     @include float-left;
     @include opaque;
@@ -240,7 +240,7 @@ dd {
   }
 
   li:first-child {
-    figure img {
+    .figure img {
       border-top: none;
     }
 
@@ -254,7 +254,7 @@ dd {
 /* Animation switches images and link highlights every 6 seconds. */
 
 @for $i from 1 through 5 {
-  .slideshow li:nth-child(#{$i}) figure {
+  .slideshow li:nth-child(#{$i}) .figure {
     @include animation(xfade 30s #{6 * ($i - 1)}s infinite);
   }
 }
@@ -397,7 +397,7 @@ a.button {
  */
 
 .slideshow {
-  figure {
+  .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
@@ -408,7 +408,7 @@ a.button {
     }
   }
 
-  li:first-child figure {
+  li:first-child .figure {
     float: none;
   }
 
@@ -421,7 +421,7 @@ a.button {
 }
 
 @for $i from 1 through 5 {
-  .slideshow li:nth-child(#{$i}) figure {
+  .slideshow li:nth-child(#{$i}) .figure {
     @include animation(no-fade 30s #{6 * ($i - 1)}s infinite);
   }
 }
@@ -539,7 +539,7 @@ body {
 }
 
 .slideshow {
-  figure {
+  .figure {
     width: calc(100% - 250px);
   }
 
@@ -568,7 +568,7 @@ body {
  */
 
 .slideshow {
-  figure {
+  .figure {
     width: calc(100% - 300px);
   }
 

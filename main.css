@@ -63,7 +63,7 @@ body {
 img {
   max-width: 100%; }
 
-figure {
+.figure {
   margin: 0;
   padding: 0; }
 
@@ -169,16 +169,16 @@ dd {
   .slideshow li {
     margin: 0;
     padding: 0; }
-  .slideshow figure {
+  .slideshow .figure {
     position: absolute;
     top: 0;
     left: 0;
     width: calc(100% - 140px);
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0; }
-    .slideshow figure img {
+    .slideshow .figure img {
       display: block; }
-    .slideshow figure .credit {
+    .slideshow .figure .credit {
       font-size: .5rem;
       position: absolute;
       right: 1em;
@@ -186,7 +186,7 @@ dd {
       color: white;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
       opacity: 0.7; }
-    .slideshow figure .caption {
+    .slideshow .figure .caption {
       display: block;
       position: absolute;
       left: 0;
@@ -194,7 +194,7 @@ dd {
       color: white;
       background: rgba(0, 0, 0, 0.3);
       padding: 8px 20px; }
-  .slideshow li:first-child figure {
+  .slideshow li:first-child .figure {
     position: relative;
     float: left;
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -212,33 +212,33 @@ dd {
       display: block;
       margin: 0;
       padding: .4em 0 .4em 10px; }
-  .slideshow li:first-child figure img {
+  .slideshow li:first-child .figure img {
     border-top: none; }
   .slideshow li:first-child .link {
     border-top: none; }
 
 /* Animation switches images and link highlights every 6 seconds. */
-.slideshow li:nth-child(1) figure {
+.slideshow li:nth-child(1) .figure {
   -moz-animation: xfade 30s 0s infinite;
   -webkit-animation: xfade 30s 0s infinite;
   animation: xfade 30s 0s infinite; }
 
-.slideshow li:nth-child(2) figure {
+.slideshow li:nth-child(2) .figure {
   -moz-animation: xfade 30s 6s infinite;
   -webkit-animation: xfade 30s 6s infinite;
   animation: xfade 30s 6s infinite; }
 
-.slideshow li:nth-child(3) figure {
+.slideshow li:nth-child(3) .figure {
   -moz-animation: xfade 30s 12s infinite;
   -webkit-animation: xfade 30s 12s infinite;
   animation: xfade 30s 12s infinite; }
 
-.slideshow li:nth-child(4) figure {
+.slideshow li:nth-child(4) .figure {
   -moz-animation: xfade 30s 18s infinite;
   -webkit-animation: xfade 30s 18s infinite;
   animation: xfade 30s 18s infinite; }
 
-.slideshow li:nth-child(5) figure {
+.slideshow li:nth-child(5) .figure {
   -moz-animation: xfade 30s 24s infinite;
   -webkit-animation: xfade 30s 24s infinite;
   animation: xfade 30s 24s infinite; }
@@ -431,15 +431,15 @@ a.button {
   /*
    * Screen is too narrow for the slide show.
    */
-  .slideshow figure {
+  .slideshow .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1; }
-    .slideshow figure .caption {
+    .slideshow .figure .caption {
       display: none; }
-  .slideshow li:first-child figure {
+  .slideshow li:first-child .figure {
     float: none; }
   .slideshow .link {
     /* We can use larger text, since we're using 50% of the width. */
@@ -447,27 +447,27 @@ a.button {
     float: right;
     width: 50%; }
 
-  .slideshow li:nth-child(1) figure {
+  .slideshow li:nth-child(1) .figure {
     -moz-animation: no-fade 30s 0s infinite;
     -webkit-animation: no-fade 30s 0s infinite;
     animation: no-fade 30s 0s infinite; }
 
-  .slideshow li:nth-child(2) figure {
+  .slideshow li:nth-child(2) .figure {
     -moz-animation: no-fade 30s 6s infinite;
     -webkit-animation: no-fade 30s 6s infinite;
     animation: no-fade 30s 6s infinite; }
 
-  .slideshow li:nth-child(3) figure {
+  .slideshow li:nth-child(3) .figure {
     -moz-animation: no-fade 30s 12s infinite;
     -webkit-animation: no-fade 30s 12s infinite;
     animation: no-fade 30s 12s infinite; }
 
-  .slideshow li:nth-child(4) figure {
+  .slideshow li:nth-child(4) .figure {
     -moz-animation: no-fade 30s 18s infinite;
     -webkit-animation: no-fade 30s 18s infinite;
     animation: no-fade 30s 18s infinite; }
 
-  .slideshow li:nth-child(5) figure {
+  .slideshow li:nth-child(5) .figure {
     -moz-animation: no-fade 30s 24s infinite;
     -webkit-animation: no-fade 30s 24s infinite;
     animation: no-fade 30s 24s infinite; }
@@ -601,7 +601,7 @@ a.button {
     #main-menu li {
       padding: 0 .5em; }
 
-  .slideshow figure {
+  .slideshow .figure {
     width: calc(100% - 250px); }
   .slideshow .link {
     font-size: 0.8rem;
@@ -619,7 +619,7 @@ a.button {
    * Screen is wide enough that the slide show images will reach their full size,
    * so widen the slide show link panel to take up the rest of the space.
    */
-  .slideshow figure {
+  .slideshow .figure {
     width: calc(100% - 300px); }
   .slideshow .link {
     font-size: 0.9rem;

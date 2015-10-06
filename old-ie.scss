@@ -18,7 +18,7 @@
 .slideshow {
   max-width: 300px;
 
-  figure {
+  .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
@@ -30,7 +30,7 @@
     }
   }
 
-  li:first-child figure {
+  li:first-child .figure {
     float: none;
   }
 
