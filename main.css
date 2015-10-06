@@ -70,7 +70,7 @@ img {
 /* Hyperlinks should be colored, but not underlined, and underline on hover. */
 a {
   text-decoration: none;
-  color: #1d3875; }
+  color: #143CD8; }
   a:hover, a:focus {
     text-decoration: underline; }
 
@@ -159,7 +159,7 @@ dd {
   max-width: 100%;
   margin: .7em 0 0 0;
   padding: 0;
-  background-color: #C9D4FF;
+  background-color: #D9E1FF;
   *zoom: 1;
   list-style: none; }
   .slideshow:after {
@@ -204,7 +204,7 @@ dd {
     line-height: 1.2em;
     float: right;
     width: 140px;
-    color: #1d3875;
+    color: #143CD8;
     border-top: 1px solid #E0E0E0; }
     .slideshow .link:first-child {
       border-top: 1px solid #C0C0C0; }
@@ -317,14 +317,14 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   99.9% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   100% {
-    background-color: #C9D4FF;
-    color: #1d3875; } }
+    background-color: #D9E1FF;
+    color: #143CD8; } }
 @-webkit-keyframes highlight {
   0% {
     background-color: #535a60;
@@ -333,14 +333,14 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   99.9% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   100% {
-    background-color: #C9D4FF;
-    color: #1d3875; } }
+    background-color: #D9E1FF;
+    color: #143CD8; } }
 @keyframes highlight {
   0% {
     background-color: #535a60;
@@ -349,14 +349,14 @@ dd {
     background-color: #535a60;
     color: white; }
   20.1% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   99.9% {
-    background-color: #C9D4FF;
-    color: #1d3875; }
+    background-color: #D9E1FF;
+    color: #143CD8; }
   100% {
-    background-color: #C9D4FF;
-    color: #1d3875; } }
+    background-color: #D9E1FF;
+    color: #143CD8; } }
 #body {
   margin: 30px 20px; }
 
@@ -514,25 +514,25 @@ a.button {
       opacity: 1; } }
   @-moz-keyframes no-highlight {
     0% {
-      background-color: #C9D4FF;
-      color: #1d3875; }
+      background-color: #D9E1FF;
+      color: #143CD8; }
     100% {
-      background-color: #C9D4FF;
-      color: #1d3875; } }
+      background-color: #D9E1FF;
+      color: #143CD8; } }
   @-webkit-keyframes no-highlight {
     0% {
-      background-color: #C9D4FF;
-      color: #1d3875; }
+      background-color: #D9E1FF;
+      color: #143CD8; }
     100% {
-      background-color: #C9D4FF;
-      color: #1d3875; } }
+      background-color: #D9E1FF;
+      color: #143CD8; } }
   @keyframes no-highlight {
     0% {
-      background-color: #C9D4FF;
-      color: #1d3875; }
+      background-color: #D9E1FF;
+      color: #143CD8; }
     100% {
-      background-color: #C9D4FF;
-      color: #1d3875; } } }
+      background-color: #D9E1FF;
+      color: #143CD8; } } }
 /* screen and (max-width: 479px) */
 @media screen and (min-width: 480px) {
   /*
