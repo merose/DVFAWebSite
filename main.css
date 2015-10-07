@@ -206,14 +206,10 @@ dd {
     width: 140px;
     color: #143CD8;
     border-top: 1px solid #E0E0E0; }
-    .slideshow .link:first-child {
-      border-top: 1px solid #C0C0C0; }
     .slideshow .link a {
       display: block;
       margin: 0;
       padding: .4em 0 .4em 10px; }
-  .slideshow li:first-child .figure img {
-    border-top: none; }
   .slideshow li:first-child .link {
     border-top: none; }
 
@@ -431,21 +427,26 @@ a.button {
   /*
    * Screen is too narrow for the slide show.
    */
-  .slideshow .figure {
-    /* No need to float the figures, since we aren't animating. */
-    position: relative;
-    width: 50%;
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1; }
-    .slideshow .figure .caption {
-      display: none; }
-  .slideshow li:first-child .figure {
-    float: none; }
-  .slideshow .link {
-    /* We can use larger text, since we're using 50% of the width. */
-    @inclue text-size(.9em, 1.4em);
-    float: right;
-    width: 50%; }
+  .slideshow {
+    background-color: transparent; }
+    .slideshow .figure {
+      /* No need to float the figures, since we aren't animating. */
+      position: relative;
+      width: 50%;
+      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+      opacity: 1;
+      margin-bottom: .7em; }
+      .slideshow .figure .caption {
+        display: none; }
+    .slideshow li:first-child .figure {
+      float: none; }
+    .slideshow .link {
+      /* We can use larger text, since we're using 50% of the width. */
+      @inclue text-size(.9em, 1.4em);
+      float: right;
+      width: 50%;
+      border: none;
+      padding-top: 1.4em; }
 
   .slideshow li:nth-child(1) .figure {
     -moz-animation: no-fade 30s 0s infinite;
@@ -514,24 +515,24 @@ a.button {
       opacity: 1; } }
   @-moz-keyframes no-highlight {
     0% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; }
     100% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; } }
   @-webkit-keyframes no-highlight {
     0% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; }
     100% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; } }
   @keyframes no-highlight {
     0% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; }
     100% {
-      background-color: #E8EEFF;
+      background-color: transparent;
       color: #143CD8; } } }
 /* screen and (max-width: 479px) */
 @media screen and (min-width: 480px) {

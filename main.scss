@@ -228,10 +228,6 @@ dd {
 
     border-top: 1px solid $lightGray;
   
-    &:first-child {
-      border-top: 1px solid $medGray;
-    }
-  
     a {
       display: block;
       margin: 0;
@@ -240,10 +236,6 @@ dd {
   }
 
   li:first-child {
-    .figure img {
-      border-top: none;
-    }
-
     .link {
       border-top: none;
     }
@@ -397,11 +389,14 @@ a.button {
  */
 
 .slideshow {
+  background-color: transparent;
+
   .figure {
     /* No need to float the figures, since we aren't animating. */
     position: relative;
     width: 50%;
     @include opaque;
+    margin-bottom: .7em;
 
     .caption {
       display: none;
@@ -417,6 +412,8 @@ a.button {
     @inclue text-size(.9em, 1.4em);
     @include float-right;
     width: 50%;
+    border: none;
+    padding-top: 1.4em;
   }
 }
 
@@ -443,11 +440,11 @@ a.button {
 
 @include keyframes (no-highlight) {
   0% {
-    background-color: $slideshowBackground;
+    background-color: transparent;
     color: $linkColor;
   }
   100% {
-    background-color: $slideshowBackground;
+    background-color: transparent;
     color: $linkColor;
   }
 }
