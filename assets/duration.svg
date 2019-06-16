@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="463.5 15.505955 221.56542 221.56542" width="221.56542" height="221.56542">
+  <defs/>
+  <metadata> Produced by OmniGraffle 7.10.2 
+    <dc:date>2019-06-13 01:22:28 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke-opacity="1" fill-opacity="1" stroke="none" fill="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_59">
+        <circle cx="574.2827" cy="126.28866" r="108.782883342316" fill="white"/>
+        <circle cx="574.2827" cy="126.28866" r="108.782883342316" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_60">
+        <line x1="574.2827" y1="126.28866" x2="572.7617" y2="44.55078" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Line_61">
+        <line x1="574.2827" y1="126.28866" x2="625" y2="160.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+    </g>
+  </g>
+</svg>
