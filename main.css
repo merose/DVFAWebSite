@@ -192,6 +192,7 @@ dd {
     clear: both;
     float: left;
     width: 34px;
+    padding-bottom: 1em;
     margin-right: 1em;
 }
 
