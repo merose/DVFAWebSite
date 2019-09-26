@@ -157,6 +157,10 @@ dd {
   margin-right: 5rem;
   padding-left: 20px; }
 
+.next-concert p {
+    padding-bottom: 0;
+}
+
 .next-concert .date-time {
     font-size: 1.2em;
     margin-top: .5em;
@@ -181,7 +185,13 @@ dd {
 }
 
 .next-concert .icon {
+    margin-bottom: 1.5em;
+}
+
+.next-concert .icon img {
+    clear: both;
     float: left;
+    width: 34px;
     margin-right: 1em;
 }
 
