@@ -85,7 +85,7 @@ details > summary:hover {
 }
 
 a {
-  color: hsl(240, 100%, 50%);
+  color: hsl(220, 100%, 50%);
   text-decoration: none;
 }
 
@@ -139,18 +139,23 @@ iframe {
 #header {
   display: grid;
   grid-template-rows: 60px;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
   align-items: center;
   line-height: 0;
 }
 
 #logo {
-  grid-area: 1 / 1;
+  grid-row: 1;
+  grid-column: 1 / span 3;
+}
+
+#main-menu {
+  display: none;
 }
 
 #menu-button {
-  grid-area: 1 / 2;
+  grid-row: 1;
+  grid-column: 11 / span 2;
   justify-self: right;
   display: grid;
 }
@@ -198,9 +203,9 @@ button {
     
   article {
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4.2rem;
     align-items: start;
   }
 
@@ -208,44 +213,59 @@ button {
     grid-area: 1 / 1;
   }
 
+  article .instruments {
+    font-size: 1.3rem;
+  }
+
   article > .photo {
-    grid-row: 1 / span 2;
-    grid-column: 2;
+    grid-area: 2 / 1;
     align-self: stretch;
     justify-self: stretch;
-    background-image: url("../images/jennifer-kloetzel-1000w.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     margin-bottom: 0.7em;
   }
 
-  article > .photo img {
-    display: none;
-  }
-
   article > .info {
-    grid-area: 2 / 1;
-  }
-
-  article > .details {
     grid-area: 3 / 1;
   }
 
-  article > .learn-more {
-    grid-area: 3 / 2;
+  article > .info li {
+    font-size: 1rem;
   }
 
+  article > .details {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+  }
+
+  article > .details h2 {
+    margin-top: 0;
+  }
+
+  #main-menu {
+    grid-row: 1;
+    grid-column: 4 / span 9;
+    align-self: center;
+    justify-self: right;
+    display: block;
+    margin: 0;    
+    padding: 0;
+    max-width: none;
+  }
+
+  #main-menu > * {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding-right: 0.7em;
+  }
+
+  #menu-button {
+      display: none;
+  }
 }
 
 @media (min-width: 1200px) {
   body {
     margin-left: 8rem;
     margin-right: 8rem;
-  }
-  article > .photo {
-    background-image: none;
-  }
-  article > .photo img {
-    display: inline;
   }
 }
