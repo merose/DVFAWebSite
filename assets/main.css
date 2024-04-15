@@ -1,0 +1,60 @@
+:root {
+    --bs-nav-link-font-size: 0.9rem;
+}
+
+body {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.2rem;
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-menu {
+    background: url(header-bar.png) transparent 0 25px repeat-x;
+}
+
+.navbar-toggler {
+    margin-top: 10px;
+    background: #535A60;
+    border: none;
+}
+
+.navbar-toggler-icon {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon {
+    border: none;
+}
+
+.nav-item .active {
+    font-weight: bold;
+}
+
+/*
+ * Breakpoints in Bootstrap.
+ *
+ * xs
+ * sm: width >= 576px
+ * md: width >= 768px
+ * lg: width >= 992px
+ * xl: width >= 1200px
+ * xxl: width >= 1400px
+ */
+@media screen and (min-width: 768px) {
+    #navbarText ul a {
+        color: #FFFFFF;
+    }
+}
